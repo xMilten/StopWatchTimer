@@ -1,0 +1,40 @@
+﻿<Window x:Class="SMWTimer.TextAttributeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:SMWTimer"
+        mc:Ignorable="d"
+        Title="TextAttributeWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <ComboBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" IsEditable="False" Name="cmbColors">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0, 2, 5, 2" />
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <!--<xctk:ColorPicker Grid.Column="0" Name="ClrPcker_Background" ShowAvailableColors="False" SelectedColorChanged="ClrPcker_Background_SelectedColorChanged"></xctk:ColorPicker>-->
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" Name="textValue"></TextBlock>
+        <Button Grid.Row="1" Grid.Column="0" Name="btnBold" Click="btnColor_Click">B</Button>
+    </Grid>
+</Window>

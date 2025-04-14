@@ -1,0 +1,47 @@
+﻿<Window x:Class="SMWTimer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SMWTimer"
+        mc:Ignorable="d"
+        Closed="Window_Closed"
+        Title="MainWindow" Height="230" Width="400">
+    <Window.DataContext>
+        <local:TextAttributes/>
+    </Window.DataContext>
+
+    <Grid Background="Gray" MouseDown="Grid_MouseDown_ResetFocus" MouseRightButtonDown="Grid_MouseRight_OpenConfig" Name="mainGrid" Focusable="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="170" />
+            <ColumnDefinition MinWidth="40" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition MinWidth="40" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Background="DimGray" Foreground="Black" FontSize="30" FontWeight="Bold" TextAlignment="Left" Padding="6, 0, 0, 0" Name="tbHackTitle" Text="{Binding }">Hack</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Background="Gray" Foreground="LightGray" FontSize="20" FontWeight="Bold" TextAlignment="Center" BorderThickness="0" Name="tbHack" GotKeyboardFocus="TextBoxValue_GotKeyboardFocus" LostFocus="TextBoxValue_LoseFocus">BabyKaizoWorld</TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Background="DimGray" Foreground="Black" FontSize="30" FontWeight="Bold" TextAlignment="Left" Padding="6, 0, 0, 0" Name="tbAuthorTitle">Author</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Background="Gray" Foreground="LightGray" FontSize="20" FontWeight="Bold" TextAlignment="Center" BorderThickness="0" Name="tbAuthor" GotKeyboardFocus="TextBoxValue_GotKeyboardFocus" LostFocus="TextBoxValue_LoseFocus">NoWieso</TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Background="DimGray" Foreground="Black" FontSize="30" FontWeight="Bold" TextAlignment="Left" Padding="6, 0, 0, 0" Name="tbExitTitle">Exits</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1" Background="Gray" Foreground="LightGray" FontSize="30" FontWeight="Bold" TextAlignment="Right" BorderThickness="0" Name="tbExitCurrent" GotKeyboardFocus="TextBoxValue_GotKeyboardFocus" LostFocus="TextBoxValue_LoseFocus">7</TextBox>
+        <TextBlock Grid.Row="2" Grid.Column="2" Background="Gray" Foreground="LightGray" FontSize="30" FontWeight="Bold" TextAlignment="Center" Name="tbExitSeparator">/</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="3" Background="Gray" Foreground="LightGray" FontSize="30" FontWeight="Bold" TextAlignment="Left" BorderThickness="0" Name="tbExitMax" GotKeyboardFocus="TextBoxValue_GotKeyboardFocus" LostFocus="TextBoxValue_LoseFocus">22</TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Background="DimGray" Foreground="Black" FontSize="30" FontWeight="Bold" TextAlignment="Left" Padding="6, 0, 0, 0" Name="tbLevelTimeTitle">Level Time</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Background="Gray" Foreground="LightGray" FontSize="30" FontWeight="Bold" TextAlignment="Center" Name="tbLevelTime">00:00:00</TextBlock>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Background="DimGray" Foreground="Black" FontSize="30" FontWeight="Bold" TextAlignment="Left" Padding="6, 0, 0, 0" Name="tbHackTimeTitle">Hack Time</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Background="Gray" Foreground="LightGray" FontSize="30" FontWeight="Bold" TextAlignment="Center" Name="tbHackTime">00:00:00</TextBlock>
+        
+    </Grid>
+</Window>
